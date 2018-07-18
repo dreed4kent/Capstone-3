@@ -1,4 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib url="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+< c:import url ="/javax.servlet.http.HttpServletRequest" />
+
 <!DOCTYPE html>		<!-- take out the rest inside -->
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
