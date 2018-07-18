@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
+	<link rel="stylesheet" type="text/css" href="css/nationalpark.css">
 <title>National Park Geek</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
   <hr class="my-4">
  <nav class="navbar navbar-expand-sm bg-light">
  
-   <img src="logo.png" class="img-thumbnail float-left" alt="National Park Geek Logo">
+   <img src="img/logo.png" class="img-thumbnail float-left" alt="National Park Geek Logo">
   <h1 class="display-4 float-left">National Park Geek</h1>
 
   <!-- Links -->

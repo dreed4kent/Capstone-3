@@ -1,14 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>		<!-- take out the rest inside -->
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <section id="national-parks" class="parks">
     <h1>National Parks</h1>
     <section class="parks">
-    	<div class="homepage-parks-image">
+    	<div>
         	<c:url var="cvnpImgSrc" value="img/parks/cvnp.jpg" />
-			<img src="${cvnpImgSrc}" alt="cvnp">
+			<img class="homepage-parks-image" src="${cvnpImgSrc}" alt="cvnp">
 		</div>
         <p>Cuyahoga Valley National Park</p>
         <p>Though a short distance from the urban areas of Cleveland and Akron, Cuyahoga Valley National Park seems worlds away. The park is a refuge for native plants and wildlife, and provides routes of discovery for visitors. The winding Cuyahoga River gives way to deep forests, rolling hills, and open farmlands. Walk or ride the Towpath Trail to follow the historic route of the Ohio & Erie Canal
@@ -16,16 +15,20 @@
     </section>
     
     <section class="parks">
-        <c:url var="enpImgSrc" value="img/parks/enp.jpg" />
-		<img src="${enpImgSrc}" alt="enp">
+    	<div>
+	        <c:url var="enpImgSrc" value="img/parks/enp.jpg" />
+			<img class="homepage-parks-image" src="${enpImgSrc}" alt="enp">
+		</div>
         <p>Everglades National Park</p>
         <p>The Florida Everglades, located in southern Florida, is one of the largest wetlands in the world. Several hundred years ago, this wetlands was a major part of a 5,184,000 acre watershed that covered almost a third of the entire state of Florida. The Everglades consist of a shallow sheet of fresh water that rolls slowly over the lowlands and through billions of blades of sawgrass. As water moves through the Everglades, it causes the sawgrass to ripple like green waves; this is why the Everglades received the nickname "River of Grass."
 		</p>
     </section>
     
     <section class="parks">
-        <c:url var="gcnpImgSrc" value="img/parks/gcnp.jpg" />
-		<img src="${gcnpImgSrc}" alt="gcnp">
+    	<div>
+	        <c:url var="gcnpImgSrc" value="img/parks/gcnp.jpg" />
+			<img class="homepage-parks-image" src="${gcnpImgSrc}" alt="gcnp">
+		</div>
         <p>Grand Canyon National Park</p>
         <p>If there is any place on Earth that puts into perspective the grandiosity of Mother Nature, it is the Grand Canyon. The natural wonder, located in northern Arizona, is a window into the regio's geological and Native American past. As one of the country's first national parks, the Grand Canyon has long been considered a U.S. treasure, and continues to inspire scientific study and puzzlement.
 		</p>
@@ -43,7 +46,7 @@
         <c:url var="gsmnpImgSrc" value="img/parks/gsmnp.jpg" />
 		<img src="${gsmnpImgSrc}" alt="gsmnp">
         <p>Great Smoky Mountains National Park</p>
-        <p>The Great Smoky Mountains are a mountain range rising along the Tennessee–North Carolina border in the southeastern United States. They are a subrange of the Appalachian Mountains, and form part of the Blue Ridge Physiographic Province. The range is sometimes called the Smoky Mountains and the name is commonly shortened to the Smokies. The Great Smokies are best known as the home of the Great Smoky Mountains National Park, which protects most of the range. The park was established in 1934, and, with over 9 million visits per year, it is the most-visited national park in the United States
+        <p>The Great Smoky Mountains are a mountain range rising along the TennesseeâNorth Carolina border in the southeastern United States. They are a subrange of the Appalachian Mountains, and form part of the Blue Ridge Physiographic Province. The range is sometimes called the Smoky Mountains and the name is commonly shortened to the Smokies. The Great Smokies are best known as the home of the Great Smoky Mountains National Park, which protects most of the range. The park was established in 1934, and, with over 9 million visits per year, it is the most-visited national park in the United States
 		</p>
     </section>
     
@@ -75,7 +78,7 @@
         <c:url var="ynpImgSrc" value="img/parks/ynp.jpg" />
 		<img src="${ynpImgSrc}" alt="ynp">
         <p>Yellowstone National Park</p>
-        <p>Yellowstone National Park is a protected area showcasing significant geological phenomena and processes. It is also a unique manifestation of geothermal forces, natural beauty, and wild ecosystems where rare and endangered species thrive. As the site of one of the few remaining intact large ecosystems in the northern temperate zone of earth, Yellowstone’s ecological communities provide unparalleled opportunities for conservation, study, and enjoyment of large-scale wildland ecosystem processes.
+        <p>Yellowstone National Park is a protected area showcasing significant geological phenomena and processes. It is also a unique manifestation of geothermal forces, natural beauty, and wild ecosystems where rare and endangered species thrive. As the site of one of the few remaining intact large ecosystems in the northern temperate zone of earth, Yellowstoneâs ecological communities provide unparalleled opportunities for conservation, study, and enjoyment of large-scale wildland ecosystem processes.
 		</p>
     </section>
     
