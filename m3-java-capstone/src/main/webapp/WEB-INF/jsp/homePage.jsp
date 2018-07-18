@@ -3,7 +3,6 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <section id="national-parks" class="parks">
-    <h1>National Parks</h1>
     <section class="parks">
     	<div>
         	<c:url var="cvnpImgSrc" value="img/parks/cvnp.jpg" />
