@@ -6,8 +6,10 @@
 <section id="national-parks" class="parks">
     <h1>National Parks</h1>
     <section class="parks">
-        <c:url var="cvnpImgSrc" value="img/parks/cvnp.jpg" />
-		<img src="${cvnpImgSrc}" alt="cvnp">
+    	<div class="homepage-parks-image">
+        	<c:url var="cvnpImgSrc" value="img/parks/cvnp.jpg" />
+			<img src="${cvnpImgSrc}" alt="cvnp">
+		</div>
         <p>Cuyahoga Valley National Park</p>
         <p>Though a short distance from the urban areas of Cleveland and Akron, Cuyahoga Valley National Park seems worlds away. The park is a refuge for native plants and wildlife, and provides routes of discovery for visitors. The winding Cuyahoga River gives way to deep forests, rolling hills, and open farmlands. Walk or ride the Towpath Trail to follow the historic route of the Ohio & Erie Canal
 		</p>
