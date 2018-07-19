@@ -19,7 +19,7 @@
  <nav class="navbar navbar-default bg-dark">
  <div class="navbar-header">
      <img src="img/logo.png" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
-      <ul class="justify-content-center">
+      <ul class="nav navbar-nav justify-content-center">
     <li class="nav-item active"><a class="nav-link float-left" href="#">Home</a></li>
     <li class="nav-item"><a class="nav-link" href="#">Survey</a> </li>
   </ul>
