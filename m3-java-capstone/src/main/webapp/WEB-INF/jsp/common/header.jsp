@@ -1,5 +1,5 @@
-<% page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
     <!doctype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -14,21 +14,24 @@
 </head>
 <body>
   
-
-  <hr class="my-4">
- <nav class="navbar navbar-expand-sm bg-light">
- 
-   <img src="img/logo.png" class="img-thumbnail float-left" alt="National Park Geek Logo">
-  <h1 class="display-4 float-left">National Park Geek</h1>
-
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Survey</a>
-    </li>
+<div class = "jumbotron">
+ <div class = "container-fluid">
+ <nav class="navbar navbar-default bg-dark">
+ <div class="navbar-header">
+     <img src="img/logo.png" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
+      <ul class="justify-content-center">
+    <li class="nav-item active"><a class="nav-link float-left" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Survey</a> </li>
   </ul>
+    </div>
+   
+ 
+
 
 </nav>
+</div>
+</div>
+
+
+  
+ 
