@@ -1,8 +1,32 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "func" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<section id="national-parks" class="parks">
+<div class="park">
+	<c:forEach items="${parkList}" var="park">
+		<c:url var="detail" value="/parkDetail">
+			<c:param name="parkCode" value="${park.parkcode}"></c:param>
+		</c:url>
+
+		<div>
+			<c:url var="parkpicture" value="img/parks/${func:toLowerCase(park.parkcode)}.jpg" />
+
+			<a href="${detail}" id="parkDetailLinkPicture"> <img src="${parkpicture}" /></a>
+		</div>
+		<div class="park">
+			<h4>
+				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkname}"/> </a><c:out value=" - ${park.state}" />
+			</h4>
+			<p id="theParkDescription">
+				<c:out value="${park.parkdescription}" />
+			</p>
+			<hr id="spanner"></hr>
+		</div>
+	</c:forEach>
+</div>
+
+<%-- <section id="national-parks" class="parks">
     <section class="parks">
     	<div>
         	<c:url var="cvnpImgSrc" value="img/parks/cvnp.jpg" />
@@ -89,6 +113,6 @@
 		</p>
     </section>
     
-</section>
+</section> --%>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
