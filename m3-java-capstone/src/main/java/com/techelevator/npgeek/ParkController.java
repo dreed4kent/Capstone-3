@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -18,9 +19,10 @@ public class ParkController {
 	@Autowired
 	ParkDAO parkDAO;
 	
-	@RequestMapping(path= "/", method= RequestMethod.GET)  // <--- the path ("/") and the method = GET
-	public String displayHomePage() {
+	@RequestMapping(path="/", method= RequestMethod.GET)  // <--- the path ("/") and the method = GET
+	public String displayHomePage(ModelMap map) {
 		List<Park> parkList = parkDAO.getAllParks();
+		map.addAttribute("parkList", parkList);
 		return "homePage";
 	}
 	
