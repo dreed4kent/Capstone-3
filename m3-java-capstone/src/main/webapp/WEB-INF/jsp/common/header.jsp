@@ -1,4 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d72ec9dd14954a6c7e728fc4084a1a2993c014e3
     <!doctype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -13,10 +17,10 @@
 </head>
 <body>
   
-
-  <hr class="my-4">
- <nav class="navbar navbar-expand-sm bg-light">
+<div class = "jumbotron">
+ <div class = "container-fluid">
  
+<<<<<<< HEAD
    <img src="img/logo.png" class="img-thumbnail float-left" alt="National Park Geek Logo">
 
   <!-- Links -->
@@ -27,6 +31,22 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Survey</a>
     </li>
+=======
+ <nav class="navbar navbar-expand navbar-default bg-dark">
+ <a class="navbar-brand" href="#">
+     <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
+     </a>
+      <ul class="nav navbar-nav navbar-collapse float-left">
+    <li class="nav-item"><a class="nav-link float-left" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link float-left" href="#">Survey</a> </li>
+>>>>>>> d72ec9dd14954a6c7e728fc4084a1a2993c014e3
   </ul>
+    </div>
 
 </nav>
+</div>
+</div>
+
+
+  
+ 
