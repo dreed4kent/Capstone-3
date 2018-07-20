@@ -16,17 +16,16 @@
   
 <div class = "jumbotron">
  <div class = "container-fluid">
- <nav class="navbar navbar-default bg-dark">
- <div class="navbar-header">
-     <img src="img/logo.png" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
-      <ul class="nav navbar-nav justify-content-center">
-    <li class="nav-item active"><a class="nav-link float-left" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Survey</a> </li>
+ 
+ <nav class="navbar navbar-expand navbar-default bg-dark">
+ <a class="navbar-brand" href="#">
+     <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
+     </a>
+      <ul class="nav navbar-nav navbar-collapse float-left">
+    <li class="nav-item"><a class="nav-link float-left" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link float-left" href="#">Survey</a> </li>
   </ul>
     </div>
-   
- 
-
 
 </nav>
 </div>
