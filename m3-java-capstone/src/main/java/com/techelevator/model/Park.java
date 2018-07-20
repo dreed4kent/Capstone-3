@@ -7,7 +7,7 @@ public class Park {
 	private String state;
 	private int acreage;
 	private int elevationinfeet;
-	private int milesoftrail;
+	private float milesoftrail;	// <--- getInt failed...WHY??? ¯\_(ツ)_/¯
 	private int numberofcampsites;
 	private String climate;
 	private int yearfounded;
@@ -48,10 +48,10 @@ public class Park {
 	public void setElevationinfeet(int elevationinfeet) {
 		this.elevationinfeet = elevationinfeet;
 	}
-	public int getMilesoftrail() {
+	public float getMilesoftrail() {
 		return milesoftrail;
 	}
-	public void setMilesoftrail(int milesoftrail) {
+	public void setMilesoftrail(float milesoftrail) {
 		this.milesoftrail = milesoftrail;
 	}
 	public int getNumberofcampsites() {
