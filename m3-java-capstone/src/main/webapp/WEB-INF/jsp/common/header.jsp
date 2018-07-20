@@ -14,7 +14,7 @@
 </head>
 <body>
   
-<div class = "jumbotron">
+
  <div class = "container-fluid">
  
  <nav class="navbar navbar-expand navbar-default bg-dark">
@@ -29,7 +29,7 @@
 
 </nav>
 </div>
-</div>
+
 
 
   
