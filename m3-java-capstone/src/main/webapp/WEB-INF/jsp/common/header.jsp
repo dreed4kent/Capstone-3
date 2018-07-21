@@ -16,8 +16,7 @@
   
 
  <div class = "container-fluid">
-
-<nav class="navbar navbar-expand navbar-default bg-dark float-left">
+<nav class="navbar navbar-expand navbar-default float-left">
  <a class="navbar-brand float-left" href="#">
      <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
      </a>
@@ -35,6 +34,7 @@
 
 </nav>
 </div>
+
 
 
 

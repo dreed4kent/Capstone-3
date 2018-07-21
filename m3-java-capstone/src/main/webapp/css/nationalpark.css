@@ -9,6 +9,11 @@
 	vertical-align: middle;
 	text-align: left;
 	float: left;
+	font-size: 120%;
+}
+
+.nav-item {
+	font-size: 120%;
 }
 
 .container-fluid {
@@ -39,6 +44,7 @@
 
 .container-park-info {
 	justify-content: flex-start;
+	overflow-x: hidden;
 }
 
 .parkpicturehome {
@@ -46,6 +52,9 @@
 	clear: both;
 	padding: 5%;
 	align-items: left;
+	position: relative;
+	containment: parent;
+	
 }
 
 .parkwords {
@@ -53,4 +62,5 @@
 	vertical-align: text-top;
 	clear: both;
 	padding: 5%;
+	position: relative;
 }
