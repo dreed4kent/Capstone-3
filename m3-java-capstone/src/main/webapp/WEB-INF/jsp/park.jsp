@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "func" %>
@@ -29,12 +30,47 @@
 		<p>Number Of Campsites: <span id="description" ><c:out value="${park.numberofcampsites}" /></span></p>
 		<p>Year Founded: <span id="description" ><c:out value="${park.yearfounded}" /></span></p>
 		
-		<c:url var="weather" value="/weather">
-			<c:param name="parkCode" value="${park.parkcode}" />
-	
-		</c:url>
-		<c:url var="formAction" value="/weather"></c:url>
-	
-		<p><a href="${weather}" id="clock"><span id="weatherLink">Click here to view your 5-day weather report</span></a></p>	
+		<%-- Weather Section (below) --%>
+		
+		<h4>Your 5-day Weather Report</h4>
+		<div>
+			<table>
+				<tr>
+					<td>Day</td>
+					<td>Low</td>
+					<td>High</td>
+					<td>Forecast</td>
+					<td>Advisory</td>
+				</tr>
+			<c:forEach var="weather" items="${weatherList}">
+				<tr>
+					<c:choose>
+						<c:when test="${weather.forecast == 'partly cloudy'}">
+							<c:url var="weatherPicture" value="img/weather/partlyCloudy.png" />
+						</c:when>
+						<c:otherwise>
+							<c:url var="weatherPicture" value="img/weather/${weather.forecast}.png" />
+						</c:otherwise>
+					</c:choose>
+					<td><img src="${weatherPicture}" /></td>
+					<td><span id="dayNum"><c:out value="${weather.fiveDayForecastValue}" /></span></td>
+					<c:choose>
+						<c:when test = "${tempUnit=='farenheit'}">
+							<td><span id="low"><c:out value="${weather.low}" /></span></td>
+							<td><span id="high"><c:out value="${weather.high}" /></span></td>
+						</c:when>
+						<c:otherwise>
+							<td><span id="clow"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
+							<td><span id="chigh"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
+						</c:otherwise>
+					</c:choose>
+					<ul>
+					<td><span id="weather"><c:out value="${weather.forecast}" /></span></td>
+					</ul>
+				</tr>
+			</c:forEach>
+			</table>
+		</div>
+		
 	</div> 
 </div>
