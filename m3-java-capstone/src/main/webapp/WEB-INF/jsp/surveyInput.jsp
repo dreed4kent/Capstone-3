@@ -15,13 +15,23 @@
 
 <c:url var="surveyFormURL" value="/survey/newSurvey"/>
 
-<h2>Favorite Park Survey</h2>
+<h2 class = "survey-title">Favorite Park Survey</h2>
 <form method="POST" class="forms" action="${SurveyFormURL}">
 
 	<div class="form-group">
-	 <label for="favoritenationalpark">Favorite National Park</label>
-	 <select class="form-control" id="favoritenationalpark" name="favoritenationalpark">
-	 	<option value=""> </option>
+	 <label for="favoritenationalpark">Vote for your Favorite National Park!</label>
+	 <select class="form-control" id="favoritenationalpark" name="favoritenationalpark" >
+
+	 	<option value="CVNP">Cuyahoga Valley National Park </option>
+	 	<option value="ENP">Everglades National Park </option>
+	 	<option value="GNP">Glacier National Park </option>
+	 	<option value="GCNP">Grand Canyon National Park </option>
+	 	<option value="GSMNP">Great Smoky Mountain National Park </option>
+	 	<option value="GTNP">Grand Teton National Park </option>
+	 	<option value="MRNP">Mount Ranier National Park </option>
+	 	<option value="RMNP">Rocky Mountain National Park </option>
+	 	<option value="YNP">Yellowstone National Park </option>
+	 	<option value="YNP2">Yosemite National Park </option>
 	 
 	 
 	 </select>
@@ -31,7 +41,7 @@
 	 <input type="email" id="emailaddress" name="emailaddress">
 	 
 	 <div class="form-group">
-	<label for="state" class="col-sm-2 control-label">State</label>
+	<label for="state" class="col-sm-2 control-label">State:</label>
 	<div class="col-sm-10">
 		<select class="form-control" id="state" name="state">
 			<option value="">N/A</option>
@@ -91,16 +101,19 @@
 	</div>
 </div>
 	 
+	 <div class = "activity-form">
 	  <label for="activitylevel">Activity level:</label>
-	  <input type="radio" name="activitylevel" value="inactive"> Inactive<br>
-	<input type="radio" name="activitylevel" value="sedentary"> Sedentary<br>
-	<input type="radio" name="activitylevel" value="active"> Active<br>
-	<input type="radio" name="activitylevel" value="extremelyactive"> Extremely Active<br>
+	  <div class ="container">
+	  <div class ="row">
+	  <div class ="col-md-3" ><label><input type="radio" name="activitylevel" value="inactive"> Inactive</label></div>
+	  <div class ="col-md-3" ><label><input type="radio" name="activitylevel" value="sedentary"> Sedentary</label></div>
+	  <div class ="col-md-3" ><label><input type="radio" name="activitylevel" value="active"> Active</label></div>
+	  <div class ="col-md-3" ><label><input type="radio" name="activitylevel" value="extremelyactive"> Extremely Active</label></div> <br>
+	</div>
+	</div>
+	</div>
 	
-	
-	
-	
-	<input type="submit" value="submit" />
+	<input class="survey-submit" type="submit" value="submit" />
 
 </form>	
 

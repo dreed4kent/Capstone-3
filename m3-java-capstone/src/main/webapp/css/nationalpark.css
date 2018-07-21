@@ -24,3 +24,15 @@
 	width: 100%;
 }
 
+.survey {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.survey-title {
+	text-align: center;
+}
+
+.survey-submit{
+	float: right;
+}
