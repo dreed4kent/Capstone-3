@@ -28,15 +28,13 @@
 		<p>Animal Species: <span id="description" ><c:out value="${park.numberofanimalspecies}" /></span></p>
 		<p>Number Of Campsites: <span id="description" ><c:out value="${park.numberofcampsites}" /></span></p>
 		<p>Year Founded: <span id="description" ><c:out value="${park.yearfounded}" /></span></p>
-<%--		
-		<c:url var="forecast" value="/forecastDetail">
+		
+		<c:url var="weather" value="/weather">
 			<c:param name="parkCode" value="${park.parkcode}" />
 	
 		</c:url>
-		<c:url var="formAction" value="/forecastDetail"></c:url>
+		<c:url var="formAction" value="/weather"></c:url>
 	
-		<p><a href="${forecast}" id="clock"><span id="forecastLink">Click here to view your 5-day weather report</span></a></p>
-		
-		<c:out value="${park.parkdescription}" /> --%>		
+		<p><a href="${weather}" id="clock"><span id="weatherLink">Click here to view your 5-day weather report</span></a></p>	
 	</div> 
 </div>
