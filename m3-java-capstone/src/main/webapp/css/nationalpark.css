@@ -37,12 +37,20 @@
 	float: right;
 }
 
+.container-park-info {
+	justify-content: flex-start;
+}
+
 .parkpicturehome {
 	float:left;
+	clear: both;
+	padding: 5%;
+	align-items: left;
 }
 
 .parkwords {
 	float: right;
 	vertical-align: text-top;
 	clear: both;
+	padding: 5%;
 }
