@@ -2,7 +2,7 @@
 
 <!doctype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-
+<head>
     <!-- Required meta tags -->
     <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,9 +21,9 @@
  <a class="navbar-brand float-left" href="#">
      <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
      </a>
-     </nav>
+ </nav>
      </div>
-<div class = "container-fluid">
+ <div class = "container-fluid">
 <nav class="navbar navbar-expand navbar-default bg-dark float-left">
 		<ul class="nav navbar-nav navbar-collapse float-left">
 			<c:url var="homeHref" value="/" />
