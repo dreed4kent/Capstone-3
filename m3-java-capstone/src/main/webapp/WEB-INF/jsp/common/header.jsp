@@ -17,13 +17,13 @@
 
  <div class = "container-fluid">
 
-<nav class="navbar navbar-expand navbar-default bg-dark">
- <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand navbar-default bg-dark float-left">
+ <a class="navbar-brand float-left" href="#">
      <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
      </a>
-      <ul class="nav navbar-nav navbar-collapse float-left">
+      <ul class="nav navbar-nav navbar-collapse"  />
     <li class="nav-item"><a class="nav-link float-left" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link float-left" href="#">Survey</a> </li>
+    <li class="nav-item"><a class="nav-link" href="/surveyInput">Survey</a> </li>
 </ul>
     </div>
 

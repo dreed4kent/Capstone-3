@@ -5,3 +5,17 @@
     padding-bottom: 3%;
 }
 
+.nav-link {
+	vertical-align: middle;
+	text-align: left;
+	float: left;
+}
+
+.container-fluid {
+	margin-left: 0%;
+	padding-left: 0%;
+	padding-right: 0%;
+	width: 100%;
+	
+}
+
