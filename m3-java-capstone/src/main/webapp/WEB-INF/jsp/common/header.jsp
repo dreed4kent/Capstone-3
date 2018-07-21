@@ -26,8 +26,8 @@
  <div class = "container-fluid">
 <nav class="navbar navbar-expand navbar-default bg-dark float-left">
       <ul class="nav navbar-nav navbar-collapse"  />
-    <li class="nav-item"><a class="nav-link float-left" href="homeHref">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="surveyInputHref">Survey</a> </li>
+    <li class="nav-item"><a class="nav-link float-left" href="${homeHref}">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="${surveyInputHref}">Survey</a> </li>
 </ul>
     </div>
 
