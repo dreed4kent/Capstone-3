@@ -10,13 +10,13 @@
 		</c:url>
 		
 		<div class = "container">
-		<div class = "row">
-		<div class = "col-md-4 parkpicturehome clearfix pull-left">
+		
+		<div class = "parkpicturehome clearfix pull-left">
 			<c:url var="parkpicture" value="img/parks/${func:toLowerCase(park.parkcode)}.jpg" />
 
 			<a href="${detail}" id="parkDetailLinkPicture"> <img src="${parkpicture}" /></a>
 		</div>
-		<div class="col-md-4 park parkwords clearfix pull-right">
+		<div class=" park parkwords clearfix pull-right">
 			<h4>
 				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkname}"/> </a><c:out value=" - ${park.state}" />
 			</h4>
@@ -25,7 +25,7 @@
 			</p>
 			<hr id="spanner"></hr>
 			</div>
-		</div>
+		
 		</div>
 	</c:forEach>
 	</div>
