@@ -13,23 +13,24 @@
 		
 		<div class = "parkpicturehome clearfix pull-left">
 			<c:url var="parkpicture" value="img/parks/${func:toLowerCase(park.parkcode)}.jpg" />
-
 			<a href="${detail}" id="parkDetailLinkPicture"> <img src="${parkpicture}" /></a>
 		</div>
-		<div class=" park parkwords clearfix pull-right">
+		<div class="park parkwords clearfix pull-right">
 			<h4>
 				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkname}"/> </a><c:out value=" - ${park.state}" />
 			</h4>
 			<p id="theParkDescription">
 				<c:out value="${park.parkdescription}" />
 			</p>
-			<hr id="spanner"></hr>
+			
 			</div>
+			</div>
+			<hr id="spanner"></hr>
 		
-		</div>
+		
 	</c:forEach>
 	</div>
-
+	
 
 <%-- <section id="national-parks" class="parks">
     <section class="parks">
