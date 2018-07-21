@@ -21,6 +21,10 @@
  <a class="navbar-brand float-left" href="#">
      <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
      </a>
+ </nav>
+ </div>
+ <div class = "container-fluid">
+<nav class="navbar navbar-expand navbar-default bg-dark float-left">
       <ul class="nav navbar-nav navbar-collapse"  />
     <li class="nav-item"><a class="nav-link float-left" href="homeHref">Home</a></li>
     <li class="nav-item"><a class="nav-link" href="surveyInputHref">Survey</a> </li>
