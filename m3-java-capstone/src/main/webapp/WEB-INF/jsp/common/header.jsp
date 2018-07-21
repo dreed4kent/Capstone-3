@@ -21,10 +21,12 @@
  <a class="navbar-brand" href="#">
      <img src="img/logo.png" width = "50%" height ="100%" class="img img-thumbnail navbar-brand" alt="National Park Geek Logo">
      </a>
-      <ul class="nav navbar-nav navbar-collapse float-left">
-    <li class="nav-item"><a class="nav-link float-left" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link float-left" href="#">Survey</a> </li>
-</ul>
+		<ul class="nav navbar-nav navbar-collapse float-left">
+			<c:url var="homeHref" value="/" />
+		    <li class="nav-item"><a class="nav-link float-left" href="${homeHref}">Home</a></li>
+		    <c:url var="surveyInputHref" value="/surveyInput" />
+		    <li class="nav-item"><a class="nav-link float-left" href="${surveyInputHref}">Survey</a> </li>
+		</ul>
     </div>
 
 </nav>
