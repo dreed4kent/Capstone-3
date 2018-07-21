@@ -70,6 +70,9 @@
 				</tr>
 			</c:forEach>
 			</table>
+			
+			<form method="GET" action="${formAction}" id="forecastSubmit">
+			</form>
 		</div>
 		
 	</div> 
