@@ -8,13 +8,15 @@
 		<c:url var="detail" value="/parkDetail">
 			<c:param name="parkCode" value="${park.parkcode}"></c:param>
 		</c:url>
-
-		<div>
+		
+		<div class = "container">
+		<div class = "row">
+		<div class = "col-md-4 parkpicturehome clearfix pull-left">
 			<c:url var="parkpicture" value="img/parks/${func:toLowerCase(park.parkcode)}.jpg" />
 
 			<a href="${detail}" id="parkDetailLinkPicture"> <img src="${parkpicture}" /></a>
 		</div>
-		<div class="park">
+		<div class="col-md-4 park parkwords clearfix pull-right">
 			<h4>
 				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkname}"/> </a><c:out value=" - ${park.state}" />
 			</h4>
@@ -22,9 +24,12 @@
 				<c:out value="${park.parkdescription}" />
 			</p>
 			<hr id="spanner"></hr>
+			</div>
+		</div>
 		</div>
 	</c:forEach>
-</div>
+	</div>
+
 
 <%-- <section id="national-parks" class="parks">
     <section class="parks">

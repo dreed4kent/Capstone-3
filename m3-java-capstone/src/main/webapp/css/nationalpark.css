@@ -36,3 +36,13 @@
 .survey-submit{
 	float: right;
 }
+
+.parkpicturehome {
+	float:left;
+}
+
+.parkwords {
+	float: right;
+	vertical-align: text-top;
+	clear: both;
+}
