@@ -51,4 +51,10 @@ public class JDBCSurveyDAO implements SurveyDAO {
 		// 5. return list
 		return list;
 	}
+
+	@Override
+	public void save(Survey survey) {
+		// TODO Auto-generated method stub
+		
+	}
 }

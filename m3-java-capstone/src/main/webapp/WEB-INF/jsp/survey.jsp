@@ -9,7 +9,6 @@
 	background-color: white;
 }
 
-
 </style>
 
 <div class="survey">

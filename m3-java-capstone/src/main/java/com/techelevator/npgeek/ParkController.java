@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.model.Park;
 import com.techelevator.model.ParkDAO;
+import com.techelevator.model.Survey;
+import com.techelevator.model.SurveyDAO;
 
 @Controller
 public class ParkController {
 	
 	@Autowired
 	ParkDAO parkDAO;
+	@Autowired
+	SurveyDAO surveyDAO;
 	
 	@RequestMapping(path="/", method= RequestMethod.GET)  // <--- the path ("/") and the method = GET
 	public String displayHomePage(ModelMap map) {
@@ -36,5 +40,16 @@ public class ParkController {
 			}
 		}
 		return "park"; // <-- jsp name without ".jsp"
+	}
+	
+	@RequestMapping(path="/surveyInput", method= RequestMethod.GET)
+	public String displaySurvey() {
+		return "surveyInput";
+	}
+	
+	@RequestMapping(path="/surveyInput", method= RequestMethod.POST)
+	public String collectSurvey(Survey survey) {
+		surveyDAO.save(survey);
+		return "surveyResults";
 	}
 }
