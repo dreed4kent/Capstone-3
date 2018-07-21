@@ -36,6 +36,7 @@
 		<div>
 			<table>
 				<tr>
+					<td></td>
 					<td>Day</td>
 					<td>Low</td>
 					<td>High</td>
@@ -66,14 +67,25 @@
 					</c:choose>
 					<ul>
 					<td><span id="weather"><c:out value="${weather.forecast}" /></span></td>
-					</ul>
 				</tr>
 			</c:forEach>
 			</table>
 			
 			<form method="GET" action="${formAction}" id="forecastSubmit">
+				<div>
+					<c:choose>
+						<c:when test="${tempUnit=='farenheit'}">
+							<input type="hidden" name="tempUnit" value="celsius" />
+							<input type="submit" value="Change to Celsius" id="button" />
+						</c:when>
+						<c:otherwise>
+							<input type="hidden" name="tempUnit" value="farenheit" />
+							<input type="submit" value="Change to Fahrenheit" />
+						</c:otherwise>
+					</c:choose>
+				<input type = "hidden" name="parkcode" value="${param.parkcode}" />
+				</div>
 			</form>
 		</div>
-		
 	</div> 
 </div>
