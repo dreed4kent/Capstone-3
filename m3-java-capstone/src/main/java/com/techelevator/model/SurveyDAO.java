@@ -9,5 +9,6 @@ public interface SurveyDAO {
 	void visitorInput(Survey survey);
 
 	void save(Survey survey);
+	List<Survey> getSurveyByParkCode(String parkCode);
 	
 }

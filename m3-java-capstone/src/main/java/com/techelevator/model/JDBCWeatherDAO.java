@@ -22,31 +22,43 @@ public class JDBCWeatherDAO implements WeatherDAO {
 
 	@Override
 	public List<Weather> getAllWeather() {
-		String sqlRequestWeather = "SELECT * FROM weather WHERE parkcode = ?";
-		SqlRowSet allWeather = jdbcTemplate.queryForRowSet(sqlRequestWeather);
-		List<Weather> weatherList = new ArrayList<>();
-		
-		while (allWeather.next()) {
-			Weather weather = new Weather();
-			weather.setParkcode(allWeather.getString("parkcode"));
-			weather.setFivedayforecastvalue(allWeather.getInt("fivedayforecastvalue"));
-			weather.setLow(allWeather.getInt("low"));
-			weather.setHigh(allWeather.getInt("high"));
-			weather.setForecast(allWeather.getString("forecast"));
-		}
-		return weatherList;
-	}
-
-	@Override
-	public List<Weather> getAllParkWeather(String parkcode) {
-		// TODO Auto-generated method stub
+//		String sqlRequestWeather = "SELECT * FROM weather WHERE parkcode = ?";
+//		SqlRowSet allWeather = jdbcTemplate.queryForRowSet(sqlRequestWeather);
+//		List<Weather> weatherList = new ArrayList<>();
+//		
+//		while (allWeather.next()) {
+//			Weather weather = new Weather();
+//			weather.setParkcode(allWeather.getString("parkcode"));
+//			weather.setFivedayforecastvalue(allWeather.getInt("fivedayforecastvalue"));
+//			weather.setLow(allWeather.getInt("low"));
+//			weather.setHigh(allWeather.getInt("high"));
+//			weather.setForecast(allWeather.getString("forecast"));
+//		}
 		return null;
 	}
 
 	@Override
 	public List<Weather> getWeatherByParkCode(String parkCode) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
+		List<Weather> weatherByParkCode = new ArrayList<Weather>();
+		String sqlGetWeatherByParkCode = "SELECT * FROM Weather JOIN park ON park.parkCode = weather.parkCode WHERE park.parkCode = ? ORDER BY park.parkName";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetWeatherByParkCode, parkCode);
+		while(results.next()){
+			Weather weather = mapRowToWeather(results);
+			weatherByParkCode.add(weather);
+		}
+			
+		return weatherByParkCode;
+	}
+	
+	private Weather mapRowToWeather(SqlRowSet results){
+		Weather weather;
+		weather = new Weather();
+		weather.setParkcode(results.getString("parkCode"));
+		weather.setFivedayforecastvalue(results.getInt("fiveDayForecastValue"));
+		weather.setLow(results.getInt("low"));
+		weather.setHigh(results.getInt("high"));
+		weather.setForecast(results.getString("forecast"));
+		return weather;
+	}
 }

@@ -35,18 +35,6 @@ public class ParkController {
 		return "homePage";
 	}
 	
-//	@RequestMapping(path="/parkDetail", method= RequestMethod.GET)
-//	public String showPark(HttpServletRequest request ) {
-//		String parkCode = request.getParameter("parkCode");	// <-- "passed" the parkCode
-//		List<Park> parkList = parkDAO.getAllParks();	// <-- change to Map<> ?
-//		for (Park park : parkList) {
-//			if(park.getParkcode().equals(parkCode)) {	// <-- (parkcode) name from Park.java
-//				request.setAttribute("park", park);
-//			}
-//		}
-//		return "park"; // <-- jsp name without ".jsp"
-//	}
-	
 	@RequestMapping(path="/surveyInput", method= RequestMethod.GET)
 	public String displaySurvey() {
 		return "surveyInput";
@@ -58,35 +46,15 @@ public class ParkController {
 		return "surveyResults";
 	}
 	
-//	@RequestMapping(path="/weather", method= RequestMethod.GET)
-//	public String displayWeather(@RequestParam String parkcode, HttpServletRequest request, ModelMap map) {
-//		String tempUnit = request.getParameter("tempUnit");
-//		if (tempUnit == null) {
-//			if (map.containsKey("tempUnit")) {
-//				tempUnit=(String)map.get("tempUnit");
-//			} else {
-//				tempUnit="fahrenheit";
-//			}
-//			map.put("tempUnit", tempUnit);
-//			List<Weather> weather = WeatherDAO.getAllParkWeather(parkcode);
-//			request.setAttribute("weather", weather);
-//			return "park";
-//		}
-//	}
-	
-	@RequestMapping(path="/parkDetail", method=RequestMethod.GET)
-	public String displayDetails(HttpServletRequest request) {
-		String parkCode = request.getParameter("parkcode");
-		
-		//Get the parks
-		Park park = parkDAO.getParkByParkCode(parkCode);
-		request.setAttribute("park", park);
-		
-		
-		//Get the weather
-		List<Weather> weather = weatherDAO.getWeatherByParkCode(parkCode);
-		request.setAttribute("weather", weather);
-		
-		return "park";
+	@RequestMapping(path="/parkDetail", method= RequestMethod.GET)
+	public String showPark(HttpServletRequest request ) {
+		String parkCode = request.getParameter("parkCode");	// <-- "passed" the parkCode
+		List<Park> parkList = parkDAO.getAllParks();	// <-- change to Map<> ?
+		for (Park park : parkList) {
+			if(park.getParkcode().equals(parkCode)) {	// <-- (parkcode) name from Park.java
+				request.setAttribute("park", park);
+			}
+		}
+		return "park"; // <-- jsp name without ".jsp"
 	}
 }
