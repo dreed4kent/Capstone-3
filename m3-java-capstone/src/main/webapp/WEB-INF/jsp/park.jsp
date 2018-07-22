@@ -6,33 +6,36 @@
 
 
 <div class="park">
-	<div>
-
- 	 <%-- <c:url var="parkPicture" value="img/parks/${park.parkcode}.jpg"/>   --%> 
-		<img class="homepage-parks-image" src="img/parks/${func:toLowerCase(park.parkcode)}.jpg"/>   
-	</div>
-	<div>
-		<p><span id="name"><c:out value="${park.parkname}" /></span></p>
+	<div class = "container">
+	<div class ="text-center">
 	
-		<p><span id="description" ><c:out value="${park.parkdescription}" /></span></p><br>
+ 	 <%-- <c:url var="parkPicture" value="img/parks/${park.parkcode}.jpg"/>   --%> 
+		<img class="homepage-parks-image detail-park-image img-fluid" src="img/parks/${func:toLowerCase(park.parkcode)}.jpg"/>   
+		</div>
+	</div>
+	<div class = "container">
+	<div class = "text-center">
+		<h3><span class ="displayed-details" id="name"><c:out value="${park.parkname}" /></span></h3>
 		
-		<p> <span id="quote"><c:out value="${park.inspirationalquote}" /></span></p><br>
-		<p>By <span id="source"> <c:out value="${park.inspirationalquotesource}" /></span></p><br>
-	 
+		<p> "<span class ="displayed-details" id="quote"><c:out value="${park.inspirationalquote}" /></span>" -<span class ="displayed-details" id="source"> <c:out value="${park.inspirationalquotesource}" /></span></p><br>
+	</div>
+		<p><span class ="displayed-details" id="description" ><c:out value="${park.parkdescription}" /></span></p><br>
 
-		<p>Acreage: <span id="description" ><c:out value="${park.acreage}" /></span></p>
-		<p>Annual Visitors: <span id="description" ><c:out value="${park.annualvisitorcount}" /></span></p>
-		<p>Climate: <span id="description" ><c:out value="${park.climate}" /></span></p>
-		<p>Elevation: <span id="description" ><c:out value="${park.elevationinfeet}" /></span></p>
-		<p>Entry Fee: <span id="description" ><c:out value="${park.entryfee}" /></span></p>
-		<p>Miles Of Trail: <span id="description" ><c:out value="${park.milesoftrail}" /></span></p>
-		<p>Animal Species: <span id="description" ><c:out value="${park.numberofanimalspecies}" /></span></p>
-		<p>Number Of Campsites: <span id="description" ><c:out value="${park.numberofcampsites}" /></span></p>
-		<p>Year Founded: <span id="description" ><c:out value="${park.yearfounded}" /></span></p>
-		
+		<p>Acreage: <span class ="displayed-details" id="description" ><c:out value="${park.acreage}" /></span></p>
+		<p>Annual Visitors: <span class ="displayed-details" id="description" ><c:out value="${park.annualvisitorcount}" /></span></p>
+		<p>Climate: <span class ="displayed-details" id="description" ><c:out value="${park.climate}" /></span></p>
+		<p>Elevation: <span class ="displayed-details" id="description" ><c:out value="${park.elevationinfeet}" /></span></p>
+		<p>Entry Fee: $<span class ="displayed-details" id="description" ><c:out value="${park.entryfee}" /></span></p>
+		<p>Miles Of Trail: <span class ="displayed-details" id="description" ><c:out value="${park.milesoftrail}" /></span></p>
+		<p>Animal Species: <span class ="displayed-details" id="description" ><c:out value="${park.numberofanimalspecies}" /></span></p>
+		<p>Number Of Campsites: <span class ="displayed-details" id="description" ><c:out value="${park.numberofcampsites}" /></span></p>
+		<p>Year Founded: <span class ="displayed-details" id="description" ><c:out value="${park.yearfounded}" /></span></p>
+		</div>
 		<%-- Weather Section (below) --%>
-		
+		<div class = "container">
+		<div class = "text-center">
 		<h4>Your 5-day Weather Report</h4>
+		</div>
 		<div>
 			<table>
 				<tr>
@@ -86,6 +89,7 @@
 				<input type = "hidden" name="parkcode" value="${param.parkcode}" />
 				</div>
 			</form>
+			</div>
 		</div>
 	</div> 
 </div>

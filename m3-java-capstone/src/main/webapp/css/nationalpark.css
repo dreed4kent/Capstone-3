@@ -47,6 +47,19 @@
 	overflow-x: hidden;
 }
 
+.detail-park-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	text-align: center;
+}
+
+.displayed-detail {
+	padding: 3%;
+	margin: 3%;
+}
+
 .parkpicturehome {
 	float:left;
 	clear: both;
