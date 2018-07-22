@@ -48,11 +48,28 @@ public class JDBCParkDAO implements ParkDAO {
 		return parkList;
 	}
 
+//	@Override
+//	public Park createPark(int acreage, int annualvisitorcount, String climate, int elevationinfeet, int entryfee,
+//			String inspirationalquote, String inspirationalquotesource, float milesoftrail, int numberofanimalspecies,
+//			int numberofcampsites, String parkcode, String parkdescription, String parkname, String state,
+//			int yearfounded) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 	@Override
-	public Park createPark(int acreage, int annualvisitorcount, String climate, int elevationinfeet, int entryfee,
-			String inspirationalquote, String inspirationalquotesource, float milesoftrail, int numberofanimalspecies,
-			int numberofcampsites, String parkcode, String parkdescription, String parkname, String state,
-			int yearfounded) {
+	public Park getParkByParkCode(String parkCode) {
+		Park park = null;
+		String sqlGetParkByParkCode = "SELECT * FROM park WHERE parkCode = ?";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetParkByParkCode, parkCode.toUpperCase());
+		if(results.next()){
+			park = mapRowToPark(results);
+		}
+		return park;
+	}
+
+	private Park mapRowToPark(SqlRowSet results) {
 		// TODO Auto-generated method stub
 		return null;
 	}

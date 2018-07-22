@@ -29,63 +29,51 @@
 		<p>Animal Species: <span id="description" ><c:out value="${park.numberofanimalspecies}" /></span></p>
 		<p>Number Of Campsites: <span id="description" ><c:out value="${park.numberofcampsites}" /></span></p>
 		<p>Year Founded: <span id="description" ><c:out value="${park.yearfounded}" /></span></p>
-		
-		<%-- Weather Section (below) --%>
-		
-		<h4>Your 5-day Weather Report</h4>
+	</div>
+</div>
+
+<%-- Weather Section (below) --%>
+
+<div id="weather"> rfrfrfrfrfrfr
+	<c:forEach var="weather" items="${weather}">
 		<div>
-			<table>
-				<tr>
-					<td></td>
-					<td>Day</td>
-					<td>Low</td>
-					<td>High</td>
-					<td>Forecast</td>
-					<td>Advisory</td>
-				</tr>
-			<c:forEach var="weather" items="${weatherList}">
-				<tr>
-					<c:choose>
-						<c:when test="${weather.forecast == 'partly cloudy'}">
-							<c:url var="weatherPicture" value="img/weather/partlyCloudy.png" />
-						</c:when>
-						<c:otherwise>
-							<c:url var="weatherPicture" value="img/weather/${weather.forecast}.png" />
-						</c:otherwise>
-					</c:choose>
-					<td><img src="${weatherPicture}" /></td>
-					<td><span id="dayNum"><c:out value="${weather.fiveDayForecastValue}" /></span></td>
-					<c:choose>
-						<c:when test = "${tempUnit=='farenheit'}">
-							<td><span id="low"><c:out value="${weather.low}" /></span></td>
-							<td><span id="high"><c:out value="${weather.high}" /></span></td>
-						</c:when>
-						<c:otherwise>
-							<td><span id="clow"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
-							<td><span id="chigh"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
-						</c:otherwise>
-					</c:choose>
-					<ul>
-					<td><span id="weather"><c:out value="${weather.forecast}" /></span></td>
-				</tr>
-			</c:forEach>
-			</table>
-			
-			<form method="GET" action="${formAction}" id="forecastSubmit">
-				<div>
-					<c:choose>
-						<c:when test="${tempUnit=='farenheit'}">
-							<input type="hidden" name="tempUnit" value="celsius" />
-							<input type="submit" value="Change to Celsius" id="button" />
-						</c:when>
-						<c:otherwise>
-							<input type="hidden" name="tempUnit" value="farenheit" />
-							<input type="submit" value="Change to Fahrenheit" />
-						</c:otherwise>
-					</c:choose>
-				<input type = "hidden" name="parkcode" value="${param.parkcode}" />
-				</div>
-			</form>
+			<c:choose>
+				<c:when test="${weather.fiveDayForecastValue == 1}">
+					<h3><c:out value="Today"></c:out></h3>
+				</c:when>
+				<c:when test="${weather.fiveDayForecastValue == 2}">
+					<h4><c:out value="Tomorrow"></c:out></h4>
+				</c:when>
+				<c:when test="${weather.fiveDayForecastValue == 3}">
+					<h4><c:out value="Day 3"></c:out></h4>
+				</c:when>
+				<c:when test="${weather.fiveDayForecastValue == 4}">
+					<h4><c:out value="Day 4"></c:out></h4>
+				</c:when>
+				<c:when test="${weather.fiveDayForecastValue == 5}">
+					<h4><c:out value="Day 5"></c:out></h4>
+				</c:when>
+			</c:choose>
+		<img src="/m3-java-capstone/img/weather/${weather.forecast}.png"/>
+		<br>
+			<c:out value="Low: ${weather.low}"></c:out><br>
+			<c:out value="High: ${weather.high}"></c:out>
+			<br>
+			<br>
+			<c:choose>
+				<c:when test="${weather.forecast == 'snow'}">
+					<c:out value="Make sure you bring a heavy coat!"></c:out>
+				</c:when>
+				<c:when test="${weather.forecast == 'rain'}">
+					<c:out value="Pack an umbrella!"></c:out>
+				</c:when>
+				<c:when test="${weather.forecast == 'sunny'}">
+					<c:out value="Put on your best sunglasses!"></c:out>
+				</c:when>
+				<c:when test="${weather.forecast == 'thunderstorms'}">
+					<c:out value="Take cover and watch for lightening!"></c:out>
+				</c:when>
+			</c:choose>
 		</div>
-	</div> 
+	</c:forEach>
 </div>

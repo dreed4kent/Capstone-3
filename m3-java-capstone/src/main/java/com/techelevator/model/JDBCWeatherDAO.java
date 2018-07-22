@@ -37,4 +37,16 @@ public class JDBCWeatherDAO implements WeatherDAO {
 		return weatherList;
 	}
 
+	@Override
+	public List<Weather> getAllParkWeather(String parkcode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Weather> getWeatherByParkCode(String parkCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

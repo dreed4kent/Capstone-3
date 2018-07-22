@@ -9,7 +9,7 @@ public class Weather {
 	private String forecast;
 	
 	
-	public String getParkcode() {
+	public String getParkCode() {
 		return parkcode;
 	}
 	public void setParkcode(String parkcode) {
