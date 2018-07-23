@@ -30,7 +30,7 @@ public class ParkController {
 	
 	@RequestMapping(path="/", method= RequestMethod.GET)  // <--- the path ("/") and the method = GET
 	public String displayHomePage(ModelMap map) {
-		List<Park> parkList = parkDAO.getAllParks();
+		List<Park> parkList = parkDAO.getAllParks(); // <--- from JDBCParkDAO
 		map.addAttribute("parkList", parkList);
 		return "homePage";
 	}
@@ -46,10 +46,13 @@ public class ParkController {
 		return "surveyResults";
 	}
 	
-	@RequestMapping(path="/parkDetail", method= RequestMethod.GET)
-	public String showPark(HttpServletRequest request ) {
+	@RequestMapping(path="/parkDetail", method= RequestMethod.GET)		// <--- got it from JDBCWeatherDAO
+	public String showPark(HttpServletRequest request, ModelMap map) {	// modelmap map
 		String parkCode = request.getParameter("parkCode");	// <-- "passed" the parkCode
 		List<Park> parkList = parkDAO.getAllParks();	// <-- change to Map<> ?
+		
+		map.addAttribute("weatherList", weatherDAO.getWeatherByParkCode(parkCode)); // <--- from JDBCWeatherDAO
+		
 		for (Park park : parkList) {
 			if(park.getParkcode().equals(parkCode)) {	// <-- (parkcode) name from Park.java
 				request.setAttribute("park", park);

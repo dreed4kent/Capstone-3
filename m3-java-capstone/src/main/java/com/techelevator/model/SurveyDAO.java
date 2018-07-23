@@ -5,10 +5,7 @@ import java.util.List;
 public interface SurveyDAO {
 	
 	public List<Survey> getParkSurveys();
-
-	void visitorInput(Survey survey);
-
+	public List<Survey> getSurveyByParkCode(String parkCode);
 	void save(Survey survey);
-	List<Survey> getSurveyByParkCode(String parkCode);
 	
 }

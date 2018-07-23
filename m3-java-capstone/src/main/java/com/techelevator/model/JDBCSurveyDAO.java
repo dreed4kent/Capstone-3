@@ -32,17 +32,17 @@ public class JDBCSurveyDAO implements SurveyDAO {
 		return surveys;
 	}
 	
-//	@Override
-//	public List<Survey> getSurveyByParkCode(String parkCode) {
-//		List<Survey> surveys = new ArrayList<Survey>();
-//		String sqlGetParkSurveys = "SELECT COUNT (parkCode) parkcode, emailaddress, state, activitylevel FROM survey_result GROUP BY parkCode, emailaddress, state, activitylevel ORDER BY COUNT DESC LIMIT 5";
-//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetSurveyByParkCode);
-//		while(results.next()) {
-//			Survey survey = mapRowToSurvey(results);
-//			surveyByParkCode.add(survey);
-//		}
-//		return surveyByParkCode;
-//	}
+	@Override
+	public List<Survey> getSurveyByParkCode(String parkCode) {
+		List<Survey> surveys = new ArrayList<Survey>();
+		String sqlGetParkSurveys = "SELECT COUNT (parkCode) parkcode, emailaddress, state, activitylevel FROM survey_result GROUP BY parkCode, emailaddress, state, activitylevel ORDER BY COUNT DESC LIMIT 5";
+		SqlRowSet results = jdbcTemplate.queryForRowSet("sqlGetSurveyByParkCode", parkCode);
+		while(results.next()) {									// <--- while results still keep coming
+			Survey survey = mapRowToSurvey(results);
+			surveys.add(survey);
+		}
+		return surveys;
+	}
 	
 	// this just gets it out of our website (below)
 	
@@ -84,17 +84,5 @@ public class JDBCSurveyDAO implements SurveyDAO {
 	public void save(Survey survey) {
 		String sqlAddSurvey = "INSERT INTO survey_result(parkcode, emailaddress, state, activitylevel) VALUES (?, ?, ?, ?)";
 		jdbcTemplate.update(sqlAddSurvey, survey.getParkcode(), survey.getEmailaddress(), survey.getState(), survey.getActivitylevel());
-	}
-
-	@Override
-	public void visitorInput(Survey survey) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public List<Survey> getSurveyByParkCode(String parkCode) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

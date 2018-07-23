@@ -59,7 +59,7 @@
 						</c:otherwise>
 					</c:choose>
 					<td><img src="${weatherPicture}" /></td>
-					<td><span id="dayNum"><c:out value="${weather.fiveDayForecastValue}" /></span></td>
+					<td><span id="dayNum"><c:out value="${weather.fivedayforecastvalue}" /></span></td>
 					<c:choose>
 						<c:when test = "${tempUnit=='farenheit'}">
 							<td><span id="low"><c:out value="${weather.low}" /></span></td>
