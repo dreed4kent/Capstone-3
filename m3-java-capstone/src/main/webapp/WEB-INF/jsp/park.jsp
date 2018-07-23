@@ -67,7 +67,7 @@
 						</c:when>
 						<c:otherwise>
 							<td><span id="low"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
-							<td><span id="high"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
+							<td><span id="high"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.high-32)*5/9}" /></span></td>
 						</c:otherwise>
 					</c:choose>
 					<ul>
