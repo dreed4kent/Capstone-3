@@ -61,7 +61,7 @@
 					<td><img src="${weatherPicture}" /></td>
 					<td><span id="dayNum"><c:out value="${weather.fivedayforecastvalue}" /></span></td>
 					<c:choose>
-						<c:when test = "${tempUnit == 'farenheit'}">
+						<c:when test = "${tempUnit == 'fahrenheit'}">
 							<td><span id="low"><c:out value="${weather.low}" /></span></td>
 							<td><span id="high"><c:out value="${weather.high}" /></span></td>
 						</c:when>
@@ -79,12 +79,12 @@
 			<form method="GET" action="${formAction}" id="forecastSubmit">
 				<div>
 					<c:choose>
-						<c:when test="${tempUnit =='farenheit'}">
+						<c:when test="${tempUnit =='fahrenheit'}">
 							<input type="hidden" name="tempUnit" value="celsius" />
 							<input type="submit" value="Change to Celsius" id="button" />
 						</c:when>
 						<c:otherwise>
-							<input type="hidden" name="tempUnit" value="farenheit" />
+							<input type="hidden" name="tempUnit" value="fahrenheit" />
 							<input type="submit" value="Change to Fahrenheit" />
 						</c:otherwise>
 					</c:choose>
