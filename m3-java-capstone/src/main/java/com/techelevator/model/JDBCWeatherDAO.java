@@ -59,6 +59,11 @@ public class JDBCWeatherDAO implements WeatherDAO {
 		weather.setLow(results.getInt("low"));
 		weather.setHigh(results.getInt("high"));
 		weather.setForecast(results.getString("forecast"));
+		String tempweather;
+			if (results.getString("forecast").equals("partly cloudy")) {
+				tempweather = "partlycloudy";
+				weather.setForecast(tempweather);
+			}
 		return weather;
 	}
 }

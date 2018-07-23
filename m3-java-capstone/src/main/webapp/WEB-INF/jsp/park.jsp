@@ -52,22 +52,22 @@
 				<tr>
 					<c:choose>
 						<c:when test="${weather.forecast == 'partly cloudy'}">
-							<img src="img/weather/"${weather.forecast}".png" />
+							<img src="img/weather/${weather.forecast}.png" />
 						</c:when>
 						<c:otherwise>
-							<img src="img/weather/"${weather.forecast}".png" />
+							<img src="img/weather/${weather.forecast}.png" />
 						</c:otherwise>
 					</c:choose>
 					<td><img src="${weatherPicture}" /></td>
 					<td><span id="dayNum"><c:out value="${weather.fivedayforecastvalue}" /></span></td>
 					<c:choose>
-						<c:when test = "${tempUnit=='farenheit'}">
+						<c:when test = "${tempUnit == 'farenheit'}">
 							<td><span id="low"><c:out value="${weather.low}" /></span></td>
 							<td><span id="high"><c:out value="${weather.high}" /></span></td>
 						</c:when>
 						<c:otherwise>
-							<td><span id="clow"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
-							<td><span id="chigh"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
+							<td><span id="low"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
+							<td><span id="high"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
 						</c:otherwise>
 					</c:choose>
 					<ul>
@@ -79,7 +79,7 @@
 			<form method="GET" action="${formAction}" id="forecastSubmit">
 				<div>
 					<c:choose>
-						<c:when test="${tempUnit=='farenheit'}">
+						<c:when test="${tempUnit =='farenheit'}">
 							<input type="hidden" name="tempUnit" value="celsius" />
 							<input type="submit" value="Change to Celsius" id="button" />
 						</c:when>
