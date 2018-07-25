@@ -52,22 +52,23 @@
 				<tr>
 					<c:choose>
 						<c:when test="${weather.forecast == 'partly cloudy'}">
-							<img src="img/weather/${weather.forecast}.png" />
+							<td><img src="img/weather/${weather.forecast}.png" /></td>
 						</c:when>
 						<c:otherwise>
-							<img src="img/weather/${weather.forecast}.png" />
+							<td><img src="img/weather/${weather.forecast}.png" /></td>
 						</c:otherwise>
 					</c:choose>
 					<td><img src="${weatherPicture}" /></td>
 					<td><span id="dayNum"><c:out value="${weather.fivedayforecastvalue}" /></span></td>
 					<c:choose>
 						<c:when test = "${tempUnit == 'fahrenheit'}">
-							<td><span id="low"><c:out value="${weather.low}" /></span></td>
-							<td><span id="high"><c:out value="${weather.high}" /></span></td>
+							<td><span id="low2"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)/1.8}" /></span></td>
+							<td><span id="high2"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.high-32)/1.8}" /></span></td>
+							
 						</c:when>
 						<c:otherwise>
-							<td><span id="low"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.low-32)*5/9}" /></span></td>
-							<td><span id="high"><fmt:formatNumber type="number" maxFractionDigits="2" value="${(weather.high-32)*5/9}" /></span></td>
+							<td><span id="low"><c:out value="${weather.low}" /></span></td>
+							<td><span id="high"><c:out value="${weather.high}" /></span></td>
 						</c:otherwise>
 					</c:choose>
 					<ul>
@@ -79,13 +80,13 @@
 			<form method="GET" action="${formAction}" id="forecastSubmit">
 				<div>
 					<c:choose>
-						<c:when test="${tempUnit =='fahrenheit'}">
+						<c:when test="${tempUnit =='celsius'}">
 							<input type="hidden" name="tempUnit" value="celsius" />
-							<input type="submit" value="Change to Celsius" id="button" />
+							<input type="submit" value="Change to Fahrenheit" id="button" />
 						</c:when>
 						<c:otherwise>
 							<input type="hidden" name="tempUnit" value="fahrenheit" />
-							<input type="submit" value="Change to Fahrenheit" />
+							<input type="submit" value="Change to Celsius" />
 						</c:otherwise>
 					</c:choose>
 				<input type = "hidden" name="parkcode" value="${param.parkcode}" />
@@ -93,5 +94,5 @@
 			</form>
 			</div>
 		</div>
-	</div> 
+	</div> <br>
 </div>

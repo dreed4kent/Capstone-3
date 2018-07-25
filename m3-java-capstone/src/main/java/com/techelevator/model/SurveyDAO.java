@@ -6,6 +6,6 @@ public interface SurveyDAO {
 	
 	public List<Survey> getParkSurveys();
 	public List<Survey> getSurveyByParkCode(String parkCode);
-	void save(Survey survey);
+	public void save(Survey survey);
 	
 }

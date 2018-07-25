@@ -23,7 +23,7 @@ public class JDBCSurveyDAO implements SurveyDAO {
 	@Override
 	public List<Survey> getParkSurveys() {
 		List<Survey> surveys = new ArrayList<Survey>();
-		String sqlGetParkSurveys = "SELECT COUNT (parkCode) parkcode, emailaddress, state, activitylevel FROM survey_result GROUP BY parkCode, emailaddress, state, activitylevel ORDER BY COUNT DESC LIMIT 5";
+		String sqlGetParkSurveys = "SELECT COUNT (parkCode) parkcode, emailaddress, state, activitylevel FROM survey_result GROUP BY parkCode, emailaddress, state, activitylevel ORDER BY COUNT DESC";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetParkSurveys);
 		while(results.next()) {
 			Survey survey = mapRowToSurvey(results);
@@ -46,13 +46,12 @@ public class JDBCSurveyDAO implements SurveyDAO {
 	
 	// this just gets it out of our website (below)
 	
-	private Survey mapRowToSurvey(SqlRowSet results) {
-		Survey survey;
-		survey = new Survey();
-		survey.setParkcode(results.getString("parkcode"));
-		survey.setEmailaddress(results.getString("emailaddress"));
-		survey.setState(results.getString("state"));
-		survey.setActivitylevel(results.getString("activitylevel"));
+	private Survey mapRowToSurvey(SqlRowSet row) { 		// changed from results
+		Survey survey = new Survey();
+		survey.setParkcode(row.getString("parkcode"));
+		survey.setEmailaddress(row.getString("emailaddress"));
+		survey.setState(row.getString("state"));
+		survey.setActivitylevel(row.getString("activitylevel"));
 		return survey;
 	}
 
@@ -82,7 +81,7 @@ public class JDBCSurveyDAO implements SurveyDAO {
 
 	@Override								// O k a y
 	public void save(Survey survey) {
-		String sqlAddSurvey = "INSERT INTO survey_result(parkcode, emailaddress, state, activitylevel) VALUES (?, ?, ?, ?)";
+		String sqlAddSurvey = "INSERT INTO survey_result(parkcode, emailaddress, state, activitylevel) VALUES (?, ?, ?, ?)"; 		// auto incrementing for surveyid ?
 		jdbcTemplate.update(sqlAddSurvey, survey.getParkcode(), survey.getEmailaddress(), survey.getState(), survey.getActivitylevel());
 	}
 }
